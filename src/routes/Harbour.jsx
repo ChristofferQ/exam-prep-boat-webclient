@@ -1,3 +1,7 @@
 export default () => {
-    return
+    return (
+        <main style={{ padding: "1rem 0" }}>
+            <h2>Harbour</h2>
+        </main>
+    );
 }

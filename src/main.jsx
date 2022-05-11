@@ -5,15 +5,25 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App'
 import './styles/index.css'
 import Owners from './routes/Owners'
+import Harbour from './routes/Harbour'
+import Boat from './routes/Boat'
 
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} >
-        <Route path="/owners" element={<Owners />} >
-
-        </Route>
+        <Route path="/owners" element={<Owners />} />
+        <Route path="/harbour" element={<Harbour />} />
+        <Route path="/boat" element={<Boat />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
       </Route>
     </Routes>
   </BrowserRouter>,

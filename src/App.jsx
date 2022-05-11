@@ -43,7 +43,6 @@ function LoggedIn() {
 function Menu() {
   return (
     <div>
-      <h1>Book viewing</h1>
       <nav
         style={{
           borderBottom: "solid 1px",
