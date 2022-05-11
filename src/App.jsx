@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './styles/App.css'
 import facade from "./apiFacade";
+import { Outlet, Link } from 'react-router-dom';
 
 function LogIn({ login }) {
   const init = { username: "", password: "" };
@@ -43,7 +44,17 @@ function Menu() {
   return (
     <div>
       <h1>Book viewing</h1>
-
+      <nav
+        style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem",
+        }}
+      >
+        <Link to="/Owners">Owners</Link> |{" "}
+        <Link to="/Harbour">Harbour</Link> |{" "}
+        <Link to="/Boat">Boat</Link> |{" "}
+      </nav>
+      <Outlet />
     </div>
   )
 }
