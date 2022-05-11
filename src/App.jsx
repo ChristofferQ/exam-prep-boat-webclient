@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './styles/App.css'
 import facade from "./apiFacade";
 
@@ -39,6 +39,15 @@ function LoggedIn() {
 
 }
 
+function Menu() {
+  return (
+    <div>
+      <h1>Book viewing</h1>
+
+    </div>
+  )
+}
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -60,6 +69,7 @@ function App() {
       {!loggedIn ? (<LogIn login={login} />) :
         (<div>
           <LoggedIn />
+          <Menu />
           <button onClick={logout}>Logout</button>
         </div>)}
     </div>
