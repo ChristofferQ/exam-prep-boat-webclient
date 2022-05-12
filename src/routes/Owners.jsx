@@ -2,47 +2,48 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import facade from "../apiFacade";
 
-const allOwners = () => {
-    const [owners,setOwners] = useState([]);
+const Owners = () => {
+    const [ownerList, setOwnerList] = useState([]);
     useEffect(() => {
-        facade.fetchData("owners/")
-        .then(data =>{
-            setOwners(data);
-        })
+        facade.fetchData("owners")
+            .then(data => {
+                setOwnerList(data);
+            })
     }, []);
 
-   
+
 
     const [query, setQuery] = useState("");
+
     return (
-        
-        <main style={{ padding: "1rem 0" }}>
-            
-            <div>
-                <h2>Owners</h2>
-                {/* <table className="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>name</th>
-                            <th>address</th>
-                            <th>phone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            owners.map((Owner)=>(
-                                <tr>
-                                    <td>{Owner}</td>
-                                    <td>{}</td>
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                </table> */}
-            </div>
-        </main>
-        
-    );
+
+        //<main style={{ padding: "1rem 0" }}>
+
+        <div>
+            <h2>Owners</h2>
+            <table className="table table-striped">
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>address</th>
+                        <th>phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        ownerList.map((Owner, index) => (
+                            <tr>
+                                <td>{Owner.id}</td>
+                                <td>{Owner.name}</td>
+                                <td>{Owner.address}</td>
+                                <td>{Owner.phone}</td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
+    )
 }
 
-export default allOwners;
+export default Owners;
