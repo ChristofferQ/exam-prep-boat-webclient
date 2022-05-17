@@ -1,4 +1,3 @@
-import { render } from 'react-dom'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -8,8 +7,8 @@ import Owners from './routes/Owners'
 import Harbour from './routes/Harbour'
 import Boat from './routes/Boat'
 
-const rootElement = document.getElementById("root");
-render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} >
@@ -27,5 +26,4 @@ render(
       </Route>
     </Routes>
   </BrowserRouter>,
-  rootElement
 );
