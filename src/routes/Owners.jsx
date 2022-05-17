@@ -17,32 +17,34 @@ const Owners = () => {
 
     return (
 
-        //<main style={{ padding: "1rem 0" }}>
+        <main style={{ padding: "1rem 0" }}>
 
-        <div>
-            <h2>Owners</h2>
-            <table className="table table-striped">
-                <thead>
-                    <tr>
-                        <th>name</th>
-                        <th>address</th>
-                        <th>phone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        ownerList.map((Owner, index) => (
-                            <tr>
-                                <td>{Owner.id}</td>
-                                <td>{Owner.name}</td>
-                                <td>{Owner.address}</td>
-                                <td>{Owner.phone}</td>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
-        </div>
+            <div>
+                <h2>Owners</h2>
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Adddress</th>
+                            <th scope="col">Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            ownerList.map((Owner) => (
+                                <tr>
+                                    <th scope="row">{Owner.id}</th>
+                                    <td>{Owner.name}</td>
+                                    <td>{Owner.address}</td>
+                                    <td>{Owner.phone}</td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </main>
     )
 }
 
