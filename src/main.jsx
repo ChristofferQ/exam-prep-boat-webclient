@@ -6,15 +6,18 @@ import './styles/index.css'
 import Owners from './routes/Owners'
 import Harbour from './routes/Harbour'
 import Boat from './routes/Boat'
+import HarbourId from './routes/HarbourId'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} >
-        <Route path="/owners" element={<Owners />} />
-        <Route path="/harbour" element={<Harbour />} />
-        <Route path="/boat" element={<Boat />} />
+        <Route path="owners" element={<Owners />} />
+        <Route path="harbour" element={<Harbour />} >
+         <Route path=':HarbourId' element={<HarbourId/>}/>
+        </Route>
+        <Route path="boat" element={<Boat />} />
         <Route
           path="*"
           element={

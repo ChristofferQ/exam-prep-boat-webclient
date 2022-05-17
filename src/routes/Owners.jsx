@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import facade from "../apiFacade";
+import HarbourId from "./HarbourId";
 
 const Owners = () => {
     const [ownerList, setOwnerList] = useState([]);
@@ -10,8 +11,6 @@ const Owners = () => {
                 setOwnerList(data);
             })
     }, []);
-
-
 
     const [query, setQuery] = useState("");
 
