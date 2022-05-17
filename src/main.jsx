@@ -12,9 +12,9 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} >
-        <Route path="/owners" element={<Owners />} />
-        <Route path="/harbour" element={<Harbour />} />
-        <Route path="/boat" element={<Boat />} />
+        <Route path="owners" element={<Owners />} />
+        <Route path="harbour" element={<Harbour />} />
+        <Route path="boat" element={<Boat />} />
         <Route
           path="*"
           element={
