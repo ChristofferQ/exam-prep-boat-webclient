@@ -21,12 +21,13 @@ const Owners = () => {
 
         <div>
             <h2>Owners</h2>
-            <table className="table table-striped">
+            <table className="table">
                 <thead>
                     <tr>
-                        <th>name</th>
-                        <th>address</th>
-                        <th>phone</th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
                     </tr>
                 </thead>
                 <tbody>
