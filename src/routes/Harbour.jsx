@@ -19,7 +19,7 @@ const Harbour = () => {
 
     <div>
       <h2>Harbour</h2>
-      <table className="table">
+      <table className="table-hover">
         <thead>
           <tr>
             <th>Id</th>
@@ -28,14 +28,15 @@ const Harbour = () => {
             <th>Capacity</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {
             harbourList.map((Harbour, index) => (
               <tr>
                 <td>{Harbour.harbourId}</td>
-                <Link to="/HarbourId">{Harbour.name}</Link>
+                <td>{Harbour.name}</td>
                 <td>{Harbour.address}</td>
                 <td>{Harbour.capacity}</td>
+                <td></td>
               </tr>
             ))
           }
