@@ -37,7 +37,10 @@ const Harbour = () => {
                 <td>{Harbour.name}</td>
                 <td>{Harbour.address}</td>
                 <td>{Harbour.capacity}</td>
+<<<<<<< HEAD
                 <td><button>Click Here</button></td>
+=======
+>>>>>>> fc46bcd3690ca5df4cb6973fce709045763b27da
               </tr>
             ))
           }
