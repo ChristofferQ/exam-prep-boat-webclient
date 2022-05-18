@@ -14,13 +14,9 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} >
         <Route path="owners" element={<Owners />} />
-<<<<<<< HEAD
         <Route path="harbour" element={<Harbour />} >
-         <Route path=':HarbourId' element={<HarbourId/>}/>
+          <Route path=':HarbourId' element={<HarbourId />} />
         </Route>
-=======
-        <Route path="harbour" element={<Harbour />} />
->>>>>>> f95dbce6271781cd7ae2ae2c67d80b5e2b55ad70
         <Route path="boat" element={<Boat />} />
         <Route
           path="*"
