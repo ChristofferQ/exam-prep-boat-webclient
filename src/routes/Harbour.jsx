@@ -36,7 +36,6 @@ const Harbour = () => {
                 <td>{Harbour.name}</td>
                 <td>{Harbour.address}</td>
                 <td>{Harbour.capacity}</td>
-                <td></td>
               </tr>
             ))
           }
