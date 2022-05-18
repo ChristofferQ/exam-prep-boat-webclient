@@ -26,6 +26,7 @@ const Harbour = () => {
             <th>Name</th>
             <th>Address</th>
             <th>Capacity</th>
+            <th></th>
           </tr>
         </thead>
         <tbody >
@@ -36,7 +37,7 @@ const Harbour = () => {
                 <td>{Harbour.name}</td>
                 <td>{Harbour.address}</td>
                 <td>{Harbour.capacity}</td>
-                <td></td>
+                <td><button>Click Here</button></td>
               </tr>
             ))
           }
