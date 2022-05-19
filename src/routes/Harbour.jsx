@@ -6,6 +6,7 @@ import facade from "../apiFacade";
 
 const Harbour = () => {
   const [harbourList, setHarbourList] = useState([]);
+  const [boatList, setBoatList] = useState([]);
   useEffect(() => {
     facade.fetchData("harbours")
       .then(data => {
@@ -13,16 +14,14 @@ const Harbour = () => {
       })
   }, []);
 
-  const BoatsByHarbourId = (id) => {
-    const [boatList, setBoatList] = useState([]);
-    useEffect(() => {
-      facade.fetchData(`harbour/${id}`)
-        .then(data => {
-          setBoatList(data);
-        })
-    }, [])
+  function boatsByHarbourId(id) {
+    facade.fetchData(`harbour/${id}`)
+      .then(data => {
+        setBoatList(data);
+        console.log(data)
+      })
   };
-  //BoatsByHarbourId(7)
+  //BoatsByHarbourId(1)
 
   function myFunction() {
     console.log("Hello World");
@@ -46,11 +45,36 @@ const Harbour = () => {
         <tbody>
           {
             harbourList.map((Harbour, index) => (
-              <tr onClick={myFunction()}>
+              <tr onClick={() => boatsByHarbourId(Harbour.harbourId)}>
                 <td>{Harbour.harbourId}</td>
                 <td>{Harbour.name}</td>
                 <td>{Harbour.address}</td>
                 <td>{Harbour.capacity}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <h3>Boats beloning to the selected harbour</h3>
+      <table className="table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Make</th>
+            <th>Name</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            boatList.map((Boat, index) => (
+              <tr>
+                <td>{Boat.id}</td>
+                <td>{Boat.brand}</td>
+                <td>{Boat.make}</td>
+                <td>{Boat.name}</td>
+                <td>{Boat.image}</td>
               </tr>
             ))
           }
