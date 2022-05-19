@@ -13,6 +13,21 @@ const Harbour = () => {
       })
   }, []);
 
+  const BoatsByHarbourId = (id) => {
+    const [boatList, setBoatList] = useState([]);
+    useEffect(() => {
+      facade.fetchData(`harbour/${id}`)
+        .then(data => {
+          setBoatList(data);
+        })
+    }, [])
+  };
+  //BoatsByHarbourId(7)
+
+  function myFunction() {
+    console.log("Hello World");
+  }
+
   const [query, setQuery] = useState("");
 
   return (
@@ -26,18 +41,16 @@ const Harbour = () => {
             <th>Name</th>
             <th>Address</th>
             <th>Capacity</th>
-            <th></th>
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           {
             harbourList.map((Harbour, index) => (
-              <tr>
+              <tr onClick={myFunction()}>
                 <td>{Harbour.harbourId}</td>
                 <td>{Harbour.name}</td>
                 <td>{Harbour.address}</td>
                 <td>{Harbour.capacity}</td>
-                <td><button>Click Here</button></td>
               </tr>
             ))
           }
@@ -51,7 +64,7 @@ const Harbour = () => {
 return (
   <main style={{ padding: "1rem 0" }}>
     <h2>Harbour</h2>
-
+ 
     <nav
       style={{
         borderBottom: "solid 1px",
@@ -63,7 +76,7 @@ return (
   </main>
 );
 }
-
+ 
 */
 
 
