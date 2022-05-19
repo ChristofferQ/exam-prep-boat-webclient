@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import facade from "../apiFacade";
 
-
-
 const Harbour = () => {
   const [harbourList, setHarbourList] = useState([]);
   const [boatList, setBoatList] = useState([]);
@@ -18,10 +16,8 @@ const Harbour = () => {
     facade.fetchData(`harbour/${id}`)
       .then(data => {
         setBoatList(data);
-        console.log(data)
       })
   };
-  //BoatsByHarbourId(1)
 
   function myFunction() {
     console.log("Hello World");
@@ -85,25 +81,5 @@ const Harbour = () => {
     </div>
   )
 }
-
-/*
-return (
-  <main style={{ padding: "1rem 0" }}>
-    <h2>Harbour</h2>
- 
-    <nav
-      style={{
-        borderBottom: "solid 1px",
-        paddingBottom: "1rem",
-      }}
-    >
-      <Link to="/HarbourId">hej</Link>
-    </nav>
-  </main>
-);
-}
- 
-*/
-
 
 export default Harbour;

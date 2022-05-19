@@ -49,9 +49,15 @@ function Menu() {
           paddingBottom: "1rem",
         }}
       >
+        <p>User options:</p>
         <Link to="/Owners">Owners</Link> |{" "}
         <Link to="/Harbour">Harbour</Link> |{" "}
-        <Link to="/Boat">Boat</Link> |{" "}
+        <Link to="/Boat">Boat</Link>
+        <p>Admin options:</p>
+        <Link to="/CreateBoat">Create Boat</Link> |{" "}
+        <Link to="/ConnectBoat">Connect Boat</Link> |{" "}
+        <Link to="/Boat">Edit Boat</Link> |{" "}
+        <Link to="/Boat">Delete Boat</Link>
       </nav>
       <Outlet />
     </div>
