@@ -55,31 +55,33 @@ const Harbour = () => {
           }
         </tbody>
       </table>
-      <h3>Boats beloning to the selected harbour</h3>
-      <table className="table-hover">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Brand</th>
-            <th>Make</th>
-            <th>Name</th>
-            <th>Image</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            boatList.map((Boat, index) => (
-              <tr>
-                <td>{Boat.id}</td>
-                <td>{Boat.brand}</td>
-                <td>{Boat.make}</td>
-                <td>{Boat.name}</td>
-                <td>{Boat.image}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
+      <div>
+        <h3>Title </h3>
+        <table className="table-hover">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Brand</th>
+              <th>Make</th>
+              <th>Name</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              boatList.map((Boat, index) => (
+                <tr>
+                  <td>{Boat.id}</td>
+                  <td>{Boat.brand}</td>
+                  <td>{Boat.make}</td>
+                  <td>{Boat.name}</td>
+                  <td>{Boat.image}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
