@@ -29,6 +29,7 @@ const Harbour = () => {
 
     <div>
       <h2>Harbour</h2>
+      <h3>Select a harbour to see all boats belonging to it:</h3>
       <table className="table-hover">
         <thead>
           <tr>

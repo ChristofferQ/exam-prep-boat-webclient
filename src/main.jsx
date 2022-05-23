@@ -8,6 +8,7 @@ import Harbour from './routes/Harbour'
 import Boat from './routes/Boat'
 import CreateBoat from './routes/CreateBoat'
 import ConnectBoat from './routes/ConnectBoat'
+import DeleteBoat from './routes/DeleteBoat'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +20,7 @@ root.render(
         <Route path="boat" element={<Boat />} />
         <Route path="createboat" element={<CreateBoat />} />
         <Route path="connectboat" element={<ConnectBoat />} />
+        <Route path="deleteboat" element={<DeleteBoat />} />
         <Route
           path="*"
           element={

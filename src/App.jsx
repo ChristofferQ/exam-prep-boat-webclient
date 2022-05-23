@@ -57,7 +57,7 @@ function Menu() {
         <Link to="/CreateBoat">Create Boat</Link> |{" "}
         <Link to="/ConnectBoat">Connect Boat</Link> |{" "}
         <Link to="/Boat">Edit Boat</Link> |{" "}
-        <Link to="/Boat">Delete Boat</Link>
+        <Link to="/DeleteBoat">Delete Boat</Link>
       </nav>
       <Outlet />
     </div>

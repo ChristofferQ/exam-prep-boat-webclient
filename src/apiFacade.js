@@ -36,6 +36,12 @@ function apiFacade() {
         return fetch(URL + "/api/xxx/" + endpoint, options).then(handleHttpErrors);
 
     }
+
+    const deleteData = (endpoint) => {
+        const options = makeOptions("DELETE", true);
+        return fetch(URL + "/api/xxx/" + endpoint, options).then(handleHttpErrors);
+    }
+
     const makeOptions = (method, addToken, body) => {
         var opts = {
             method: method,
@@ -59,7 +65,8 @@ function apiFacade() {
         loggedIn,
         login,
         logout,
-        fetchData
+        fetchData,
+        deleteData
     }
 }
 const facade = apiFacade();
