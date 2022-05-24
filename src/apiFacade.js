@@ -31,10 +31,23 @@ function apiFacade() {
             .then(res => { setToken(res.token) })
     }
 
+    const loginData = () => {
+        const options = makeOptions("GET", true); //True add's the token
+        return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
+        //Change return fetch(URL + "api/info/user", to something like URL + "api/info/" + {userrole}?? this will change the you are logged in as (userrole) message)
+    }
+
     const fetchData = (endpoint) => {
         const options = makeOptions("GET", true); //True add's the token
         return fetch(URL + "/api/xxx/" + endpoint, options).then(handleHttpErrors);
 
+    }
+
+    const postData = (endpoint, body) => {
+        const options = makeOptions("POST", true, { value: body });
+        return fetch(URL + "/api/xxx/" + endpoint, options)
+            .then(handleHttpErrors)
+            .then(res => { setToken(res.token) })
     }
 
     const deleteData = (endpoint) => {
@@ -65,7 +78,9 @@ function apiFacade() {
         loggedIn,
         login,
         logout,
+        loginData,
         fetchData,
+        postData,
         deleteData
     }
 }

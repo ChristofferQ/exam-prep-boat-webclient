@@ -17,7 +17,6 @@ const DeleteBoat = () => {
             facade.deleteData(`boat/delete/${id}`)
                 .then(data => {
                     setBoatList(data);
-                    console.log(data);
                     alert(`Deleted boat ${id}`)
                 })
         } else {
