@@ -40,7 +40,15 @@ const ConnectBoat = () => {
                                 <td>{Boat.make}</td>
                                 <td>{Boat.name}</td>
                                 <td>{Boat.image}</td>
-                                <td><button onclick="myFunction()" class="dropbtn">{Boat.harbourId}</button> </td>
+                                <td><Dropdown>
+                                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                        Dropdown Button
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item as="button" className="dropbtn">{Boat.harbourId}</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown></td>
                                 <td>{Boat.ownerId}</td>
                             </tr>
                         ))

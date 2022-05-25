@@ -3,7 +3,24 @@ import { render } from "react-dom";
 import { Link } from "react-router-dom";
 import facade from "../apiFacade";
 
-function handleSubmit(event) {
+function CreateBoat({ create }) {
+    const init = { brand: "", make: "", boatName: "", boatImage: "" }
+    //{ value: "" }
+    //{ brand: "", make: "", boatName: "", boatImage: "" }
+    const [formData, setFormData] = useState(init);
+
+    const submitFormData = (evt) => {
+        evt.preventDefault();
+        create(formData.brand, formData.make, formData.boatName, formData.boatImage);
+        //event(fromData.value);
+        //event(formData.brand, formData.make, formData.boatName, formData.boatImage);
+    }
+    const onChange = (evt) => {
+        setFormData({ ...formData, [evt.target.id]: evt.target.value })
+    }
+
+    /*
+
     event.preventDefault();
 
     const data = new FormData(event.target);
@@ -13,26 +30,20 @@ function handleSubmit(event) {
     facade.postData("createboat", value)
 
     console.log({ value });
-}
 
-const CreateBoat = () => {
+    */
+    //}
+
+    //const CreateBoat = () => {
     return (
         <div>
             <h2>Create Boat</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="brand">Brand</label>
-                <input type="brand" name="brand" id="brand" />
-
-                <label htmlFor="make">Make</label>
-                <input type="make" name="make" id="make" />
-
-                <label htmlFor="name">Name</label>
-                <input type="name" name="name" id="name" />
-
-                <label htmlFor="boatImage">Image</label>
-                <input type="boatImage" name="boatImage" id="boatImage" />
-
-                <button type="submit">Submit</button>
+            <form onChange={onChange}>
+                <input placeholder="Brand" id="brand" />
+                <input placeholder="Make" id="make" />
+                <input placeholder="Name" id="boatName" />
+                <input placeholder="Image" id="boatImage" />
+                <button onClick={submitFormData}>Create</button>
             </form>
         </div>
     )
